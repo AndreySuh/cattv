@@ -21,7 +21,7 @@
       </div>
   
       <div class="page-content">
-        <f7-block-title>Запрос на уровень ONU</f7-block-title>
+        <f7-block-title>Запрос уровня на ONU</f7-block-title>
         <div class="list inset list-strong">
             <ul>
                 <f7-list-input
@@ -31,6 +31,7 @@
                     type="text"
                     placeholder="вводи сюда"
                     clear-button
+                    v-model:value="street"
                 >
                 <template #media>
                   <f7-icon icon="demo-list-icon" />
@@ -38,9 +39,14 @@
               </f7-list-input>
             </ul>
           </div>
+          <div class="list inset list-strong">
+          <ul>
+            <f7-link @click="as" class="list-button color-green">Запросить</f7-link>
+          </ul>
+        </div>
         <div class="list inset list-strong">
           <ul>
-            <f7-link href="/" class="list-button color-red">Меню</f7-link>
+            <f7-link href="/" class="list-button color-blue">Меню</f7-link>
           </ul>
         </div>
       </div>
@@ -48,8 +54,12 @@
   
     </f7-page>
   </template>
-  <script>
-
+<script setup>
+import {ref} from 'vue'
+ const street = ref('')
+  function as(){
+    street.value = ''
+  }
 </script>
 <style scoped>
 
